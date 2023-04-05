@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/course-style.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>Learn course</title>
+
+</head>
+
+<body>
+    <nav class="navigation">
+        <h1>DUT E-learning</h1>
+        <a href="/home" class="home-back">Back to Home</a>
+    </nav>
+    <div id="main-course-learn">
+
+        <iframe class="course-video" width="1300" height="600" src="<%= courseEnrolled.content.urlvideo  %>"
+            frameborder="0" allowfullscreen></iframe>
+        <div class="course-content">
+            <% const contentCourseObject=courseEnrolled.content %>
+                <h1 class="course-title">
+
+                    <%= contentCourseObject.title %>
+                </h1>
+                <h3 class="content-style lecturer">Lecturer: <%= contentCourseObject.lecturer %>
+                </h3>
+                <h3 class="content-style"> Total:<%= contentCourseObject.lectureHours %> hours</h3>
+                <% let getRegistrationDate =courseEnrolled.registrationDate  %>
+                <h3 class="content-style">RegistrationDate:<%=`${getRegistrationDate.getDate()}/${getRegistrationDate.getMonth()}/${getRegistrationDate.getFullYear()}` %></h3>
+                <div class="course-description">
+                    <h1>What you'll learn</h1>
+                    <h2><%= contentCourseObject.description %></h2>
+
+                </div>
+
+        </div>
+    </div>
+    <!-- <div class="course-detail">
+
+
+    </div> -->
+
+
+
+
+</body>
+
+</html>

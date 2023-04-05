@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <%- include('../partials/head.ejs') %>
+</head>
+
+<body>
+  <div class="app">
+    <header>
+      <%- include('../partials/navbar.ejs') %>
+    </header>
+
+    <main class="container">
+      <div class="form">
+
+        <h1 class="title">Admin Login</h1>
+        <form action="/admin/login" method="post" class="login-form">
+          <div class="form-content">
+            <label for="email">Email address</label>
+            <input type="email" placeholder="Enter your email" name="email" required>
+            <label for="password">Password</label>
+            <input type="password" placeholder="Typing your password" name="password" required>
+          </div>
+          <div class="notification">
+            <% if(typeof message!='undefined' ){ %>
+              <p style="color: red">
+                <%= message %>
+              </p>
+              <% } %>
+          </div>
+          <div class="sent">
+            <input type="submit" class="submit" value="Login">
+          </div>
+
+          
+        </form>
+        <a href="/forget-password" class="forget-password">Forget Password or Gmail</a>
+
+      </div>
+
+
+
+    </main>
+    <footer class="copyright">
+      <%- include('../partials/footer.ejs') %>
+    </footer>
+  </div>
+
+</body>
+
+</html>

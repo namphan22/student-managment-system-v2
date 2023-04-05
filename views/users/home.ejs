@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home(Client Side)</title>
+    <link rel="stylesheet" href="/css/user-dashboard.css">
+    <link rel="stylesheet" href="/css/modal-style.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- <script src="https://kit.fontawesome.com/65b42dc03e.js" crossorigin="anonymous"></script> -->
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+        <a href="#" class="brand">
+            <i class='bx bxs-home'></i>
+            <span class="text">DUT E-learning</span>
+        </a>
+        <ul class="side-menu top">
+            <li class="active">
+                <a href="/home">
+                    <i class='bx bxs-dashboard'></i>
+                    <span class="text">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="/course/mycourse?userId=<%= user._id%>" >
+                    <i class='bx bx-briefcase-alt-2'></i>
+                    <span class="text">My Course</span>
+                </a>
+            </li>
+            <li>
+                <a href="/edit-infor?id=<%= user._id%>">
+                    <i class='bx bx-edit' ></i>
+                    <span class="text">Personal Information</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-message-dots'></i>
+                    <span class="text">Message</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-group'></i>
+                    <span class="text">Team</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#">
+                    <i class='bx bxs-cog'></i>
+                    <span class="text">Settings</span>
+                </a>
+            </li>
+            <li>
+                <a href="/logout" class="logout">
+                    <i class='bx bxs-log-out-circle'></i>
+                    <span class="text">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!-- SIDEBAR -->
+    <section id="content">
+        <nav>
+            <i class='bx bx-menu'></i>
+
+            <form class="">
+                <div class="form-input">
+                    <input type="search" name="" id="" placeholder="Search....">
+                    <button type="submit"><i class='bx bx-search'></i></button>
+                </div>
+            </form>
+            <a href="" class="notification">
+                <i class='bx bx-bell'></i>
+                <span>8</span>
+            </a>
+            <img src="/imageUsers/<%= user.image  %>" style="width:36px ; height:36px; border-radius: 50%;">
+
+
+        </nav>
+        <main>
+            <div class="head">
+                <div class="head-left">
+                    <h1>Wellcome,<%= user.firstname%> <%= user.lastname  %></h1>
+
+                </div>
+            </div>
+            <div class="all-course">
+                <h3>All Courses</h3>
+
+                <div class="course-boxs">
+                    <% course.forEach((cour)=>{
+                        %>
+                        <li>
+                            <img src="/course/<%= cour.imageCourse%>" class="courseImage">
+                            <div class="course-content">
+                                <p class="title-course">
+                                    <%= cour.title %>
+                                </p>
+                                <p class="objective-course">
+                                    <%= cour.description %>
+                                </p>
+                                <div class="detail-course">
+                                    <span>TotalHours:<%= cour.lectureHours %></span>
+                                    <span>Credits: <%= cour.credits %></span>
+                                </div>
+                                <div class="enroll-section">
+                                    <a href="/user/<%= user._id %>/courses/<%= cour._id %> " class="enroll">Enroll</a>
+                                </div>
+                            </div>
+
+
+                        </li>
+
+
+                        <% } ) %>
+
+
+                </div>
+
+            </div>
+        </main>
+
+    </section>
+    <%if(status){ %>
+        <div class="modal-custom ">
+            <button class="close-modal">&times;</button>
+            <div class="content">
+                <h1>Update User Information</h1>
+                <form action="" method="post" class="edit-infor" enctype="multipart/form-data">
+                    <div class="form-content">
+                        <label for="firstname">Your firstname:</label>
+                        <input type="text" value="<%= user.firstname %>" name="firstname" required
+                            placeholder="Enter firstname">
+                        <label for="lastname">Your lastname:</label>
+                        <input type="text" value="<%= user.lastname %>" name="lastname" required
+                            placeholder="Enter lastname">
+                        <label for="email">Email</label>
+                        <input type="email" placeholder="Typing your email" name="email" required
+                            value="<%= user.email %>">
+                        <label for="phone">Phone</label>
+                        <input type="text" placeholder="Typing your phone" name="phone" required value="<%= user.phone %>">
+                        <input type="file" name="image" value="">
+                        <input type="hidden" name="imageId" value="<%= user.image %>">
+
+                    </div>
+
+                    <div class="sent">
+                        <input type="submit" class="submit" value="Update Information">
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+        <div class="backdrop"></div>
+
+        <% }else{ %>
+            <div class="modal-custom hidden">
+                <button class="close-modal">&times;</button>
+                <div class="content">
+                    <h1>Update User Information</h1>
+                    <form action="" method="post" class="login-form" enctype="">
+                        <div class="form-content">
+                            <label for="firstname">Your firstname:</label>
+                            <input type="text" value="<%= user.firstname %>" name="firstname" required
+                                placeholder="Enter firstname">
+                            <label for="lastname">Your lastname:</label>
+                            <input type="text" value="<%= user.lastname %>" name="lastname" required
+                                placeholder="Enter lastname">
+                            <label for="email">Email</label>
+                            <input type="email" placeholder="Typing your email" name="email" required
+                                value="<%= user.email %>">
+                            <label for="phone">Phone</label>
+                            <input type="text" placeholder="Typing your phone" name="phone" required
+                                value="<%= user.phone %>">
+
+                        </div>
+
+                        <div class="sent">
+                            <input type="submit" class="submit" value="Update Information">
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+            <div class="backdrop hidden"></div>
+            <% } %>
+
+
+
+
+
+
+
+
+                <script type="module" src="/js/modal-user.js"></script>
+                <script type="module" src="/js/script.js"></script>
+
+
+</body>
+
+</html>
