@@ -1,6 +1,10 @@
-## Contributors
-Nam Phan - Hoang Phuc
-
+## What is that app?
+This web application is based on the MVC model, where
+administrators (such as teachers) can manage their students.
+On the student side, they can study from enrolled courses. On
+the other hand admin have create many courses and manage
+student information .Addition to, it can absolutely be
+considered an E-Learning system.
 ## Tech Stack
  - Backend: Nodejs(Express Framework).
  - Database: Mongodb.
@@ -36,3 +40,5 @@ If you working on well the above steps. It's a moment to enjoy the accomplishmen
 ```
 npm start
 ```
+### Demo
+Here: <link href="https://www.youtube.com/watch?v=YIfZEB4gOpI&t=117s">https://www.youtube.com/watch?v=YIfZEB4gOpI&t=117s</link>
