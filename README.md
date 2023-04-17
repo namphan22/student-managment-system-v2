@@ -9,7 +9,8 @@ considered an E-Learning system.
  - Backend: Nodejs(Express Framework).
  - Database: Mongodb.
  - FrontEnd: Ejs template engine.
-
+## Data flow
+<img src="./public/img/dataflow.jpg"></img>
 ## Install and Run Application
 1.Clone this respository
 ```
