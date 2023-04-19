@@ -22,7 +22,7 @@ npm i
 ```
 3.Run MongoDB (On Ubuntu Machine).Before running this script,Mongodb Compass and Mongodb Server were installed.
 
-Here a video How to Install it. <a href="https://www.youtube.com/watch?v=2AWBtOvYOXI&t=192s">Instruction Video</a>
+Here a video How to Install it. <a href="https://www.youtube.com/watch?v=2AWBtOvYOXI&t=192s" target="_blank">Instruction Video</a>
 
 ```
 mongod
@@ -42,4 +42,4 @@ If you working on well the above steps. It's a moment to enjoy the accomplishmen
 npm start
 ```
 ### Demo
-Here: <link href="https://www.youtube.com/watch?v=YIfZEB4gOpI&t=117s">https://www.youtube.com/watch?v=YIfZEB4gOpI&t=117s</link>
+Here: <a href="https://www.youtube.com/watch?v=YIfZEB4gOpI&t=117s" target="_blank">https://www.youtube.com/watch?v=YIfZEB4gOpI&t=117s</a>
