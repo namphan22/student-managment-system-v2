@@ -7,8 +7,9 @@ student information .Addition to, it can absolutely be
 considered an E-Learning system.
 ## Tech Stack
  - Backend: Nodejs(Express Framework).
- - Database: Mongodb.
- - FrontEnd: Ejs template engine.
+ - Database: MongoDB,Redis.
+ - Frontend: Ejs template, Boostrap.
+ - Other Service: Cloudinary.
 ## Data flow
 <img src="./public/img/dataflow.jpg"></img>
 ## Install and Run Application
