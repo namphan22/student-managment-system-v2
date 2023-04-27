@@ -8,7 +8,7 @@ considered an E-Learning system.
 ## Tech Stack
  - Backend: Nodejs(Express Framework).
  - Database: MongoDB,Redis.
- - Frontend: Ejs template, Boostrap.
+ - Frontend: Ejs template, Bootstrap.
  - Other Service: Cloudinary.
 ## Data flow
 <img src="./public/img/dataflow.jpg"></img>
